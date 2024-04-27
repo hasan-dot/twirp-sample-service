@@ -11,7 +11,7 @@ This is a sample Twirp service that demonstrates how to use Twirp to build a sim
 
 To install and run the Twirp service, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/hasan-dot/twirp-sample-service.git`
+1. Clone the repository.
 2. Open the project in VScode dev containers using the following steps:
    1. Click on Remote Explorer VS code extention.
    2. Select "Dev Containers" from the top dropdown list.

@@ -10,9 +10,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/hasan-dot/twirp-service/cmd/server/proto"
 	"github.com/twitchtv/twirp"
 	"github.com/twitchtv/twirp/hooks/statsd"
+
+	"github.com/hasan-dot/twirp-sample-service/cmd/server/proto"
 )
 
 type randomHaberdasher struct{}

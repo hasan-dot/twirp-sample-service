@@ -3,7 +3,7 @@
 all: build
 
 .PHONY: build
-build: tools twirp
+build: tools twirp client
 
 tools:
 	go install github.com/golang/protobuf/protoc-gen-go@v1.5.2
@@ -12,10 +12,6 @@ tools:
 
 .PHONY: test
 test:  test-go
-
-.PHONY: tools.ruby
-tools.ruby:
-	.devcontainer/scripts/install-ruby-tools.sh
 
 .PHONY: lint
 lint: tools vet
@@ -39,6 +35,10 @@ clean:
 .PHONY: twirp
 twirp:
 	go build -o bin/twirp-service ./cmd/server
+
+.PHONY: client
+twirp:
+	go build -o bin/twirp-client ./cmd/client
 
 test-go:
 	@echo "==> running Go tests <=="

@@ -26,6 +26,13 @@ To install and run the Twirp service, follow these steps:
 
 ### Example Usage
 
+#### Go Client
+
+```bash
+./bin/twirp-client
+```
+
+#### cURL
 Once the service is running, you can make RPC requests to it using a Twirp client. Here's an example using cURL:
 
 ```bash

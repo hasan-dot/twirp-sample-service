@@ -59,5 +59,8 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/go,macos
 
-# Ignore bin files
+# ignore bin files
 bin/
+
+# ignore vscode __debug_bin*
+__debug_bin*

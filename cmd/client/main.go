@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/hasan-dot/twirp-service/cmd/server/proto"
+	"github.com/hasan-dot/twirp-sample-service/cmd/server/proto"
 	"github.com/twitchtv/twirp"
 )
 

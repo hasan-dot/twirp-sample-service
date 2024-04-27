@@ -1,4 +1,4 @@
-module github.com/hasan-dot/twirp-service
+module github.com/hasan-dot/twirp-sample-service
 
 go 1.21.0
 

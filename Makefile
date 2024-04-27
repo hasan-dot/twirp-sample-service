@@ -37,7 +37,7 @@ twirp:
 	go build -o bin/twirp-service ./cmd/server
 
 .PHONY: client
-twirp:
+client:
 	go build -o bin/twirp-client ./cmd/client
 
 test-go:

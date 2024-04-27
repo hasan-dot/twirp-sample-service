@@ -5,11 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch twirp (local)",
+      "name": "Launch twirp sever (local)",
       "type": "go",
       "request": "launch",
       "mode": "debug",
-      "program": "${workspaceFolder}/cmd/twirp/main.go",
+      "program": "${workspaceFolder}/cmd/server/main.go",
       "envFile": "${workspaceFolder}/dev.vscode.env"
     }
   ]

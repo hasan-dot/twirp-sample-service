@@ -38,7 +38,7 @@ clean:
 
 .PHONY: twirp
 twirp:
-	go build -o bin/twirp-service ./cmd/twirp
+	go build -o bin/twirp-service ./cmd/server
 
 test-go:
 	@echo "==> running Go tests <=="

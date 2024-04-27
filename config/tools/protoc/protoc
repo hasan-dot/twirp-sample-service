@@ -7,8 +7,8 @@ set -e
 printf "Generating proto files..."
 
 protoc \
-    --twirp_out=./cmd/twirp \
-    --go_out=./cmd/twirp \
+    --twirp_out=./cmd/server \
+    --go_out=./cmd/server \
     --go_opt="paths=source_relative" \
     --twirp_opt="paths=source_relative" \
     ./proto/*.proto

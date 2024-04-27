@@ -12,5 +12,5 @@ docker build -f config/tools/protoc/Dockerfile -t ${IMAGE} -
 docker run --rm \
 	--net=none \
 	-v $(pwd)/proto:/go/src/twirp-service/proto \
-	-v $(pwd)/cmd/twirp/proto:/go/src/twirp-service/cmd/twirp/proto \
+	-v $(pwd)/cmd/server/proto:/go/src/twirp-service/cmd/server/proto \
 	${IMAGE}

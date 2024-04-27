@@ -20,7 +20,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/hasan-dot/twirp-service/cmd/twirp/proto"
+	"github.com/hasan-dot/twirp-service/cmd/server/proto"
 	"github.com/twitchtv/twirp"
 	"github.com/twitchtv/twirp/hooks/statsd"
 )

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+set -u
+
+IMAGE=timeline-protoc
+
+tar cf - \
+    config/tools/protoc |
+docker build -f config/tools/protoc/Dockerfile -t ${IMAGE} -
+
+docker run --rm \
+	--net=none \
+	-v $(pwd)/proto:/go/src/twirp-service/proto \
+	-v $(pwd)/cmd/twirp/proto:/go/src/twirp-service/cmd/twirp/proto \
+	${IMAGE}

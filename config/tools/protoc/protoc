@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Expected to execute inside the docker container built from /config/tools/protoc/Dockerfile
+#
+set -e
+
+printf "Generating proto files..."
+
+protoc \
+    --twirp_out=./cmd/twirp \
+    --go_out=./cmd/twirp \
+    --go_opt="paths=source_relative" \
+    --twirp_opt="paths=source_relative" \
+    ./proto/*.proto
+
+# Print a lovely green checkmark if we succeeded
+printf " \033[32m✔︎\033[0m\n"

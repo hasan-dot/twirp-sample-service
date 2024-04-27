@@ -30,14 +30,6 @@ func (h *randomHaberdasher) MakeHat(ctx context.Context, size *proto.Size) (*pro
 	}, nil
 }
 
-func main() {
-	hook := statsd.NewStatsdServerHooks(LoggingStatter{os.Stderr})
-	server := proto.NewHaberdasherServer(&randomHaberdasher{}, hook)
-	log.Println("Server is running. You can curl the following endpoint:")
-	log.Println("curl -X POST -H 'Content-Type: application/json' -d '{\"inches\": 7}' http://localhost:8080/twirp/service.Haberdasher/MakeHat | jq")
-	log.Fatal(http.ListenAndServe(":8080", server))
-}
-
 type LoggingStatter struct {
 	io.Writer
 }
@@ -50,4 +42,12 @@ func (ls LoggingStatter) Inc(metric string, val int64, rate float32) error {
 func (ls LoggingStatter) TimingDuration(metric string, val time.Duration, rate float32) error {
 	_, err := fmt.Fprintf(ls, "time %s: %s @ %f\n", metric, val, rate)
 	return err
+}
+
+func main() {
+	hook := statsd.NewStatsdServerHooks(LoggingStatter{os.Stderr})
+	server := proto.NewHaberdasherServer(&randomHaberdasher{}, hook)
+	log.Println("Server is running. You can curl the following endpoint:")
+	log.Println("curl -X POST -H 'Content-Type: application/json' -d '{\"inches\": 7}' http://localhost:8080/twirp/service.Haberdasher/MakeHat | jq")
+	log.Fatal(http.ListenAndServe(":8080", server))
 }
